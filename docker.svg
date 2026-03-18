@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="brainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1D63ED;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0D47A1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Brain outline -->
+  <path d="M50 12 C35 12, 18 22, 18 40 C18 48, 22 55, 28 60 C24 65, 22 72, 25 78 C28 85, 36 88, 44 86 C46 90, 50 92, 54 90 C58 92, 64 90, 68 86 C76 88, 84 82, 84 74 C84 70, 82 66, 78 62 C82 56, 84 48, 82 40 C80 26, 66 12, 50 12Z"
+    fill="url(#brainGrad)" stroke="none"/>
+  <!-- Brain center line -->
+  <path d="M50 18 L50 84" stroke="white" stroke-width="1.5" stroke-opacity="0.4" fill="none"/>
+  <!-- Brain folds left -->
+  <path d="M50 30 C42 30, 30 34, 28 42" stroke="white" stroke-width="1.5" stroke-opacity="0.5" fill="none" stroke-linecap="round"/>
+  <path d="M50 44 C40 44, 26 50, 26 58" stroke="white" stroke-width="1.5" stroke-opacity="0.5" fill="none" stroke-linecap="round"/>
+  <path d="M50 58 C42 58, 32 64, 32 72" stroke="white" stroke-width="1.5" stroke-opacity="0.5" fill="none" stroke-linecap="round"/>
+  <!-- Brain folds right -->
+  <path d="M50 30 C58 30, 70 34, 72 42" stroke="white" stroke-width="1.5" stroke-opacity="0.5" fill="none" stroke-linecap="round"/>
+  <path d="M50 44 C60 44, 74 50, 74 58" stroke="white" stroke-width="1.5" stroke-opacity="0.5" fill="none" stroke-linecap="round"/>
+  <path d="M50 58 C58 58, 68 64, 68 72" stroke="white" stroke-width="1.5" stroke-opacity="0.5" fill="none" stroke-linecap="round"/>
+  <!-- Circuit nodes -->
+  <circle cx="28" cy="42" r="2.5" fill="white" fill-opacity="0.8"/>
+  <circle cx="72" cy="42" r="2.5" fill="white" fill-opacity="0.8"/>
+  <circle cx="26" cy="58" r="2.5" fill="white" fill-opacity="0.8"/>
+  <circle cx="74" cy="58" r="2.5" fill="white" fill-opacity="0.8"/>
+  <circle cx="32" cy="72" r="2.5" fill="white" fill-opacity="0.8"/>
+  <circle cx="68" cy="72" r="2.5" fill="white" fill-opacity="0.8"/>
+  <!-- Circuit connections -->
+  <line x1="28" y1="42" x2="22" y2="42" stroke="white" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="72" y1="42" x2="78" y2="42" stroke="white" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="26" y1="58" x2="20" y2="58" stroke="white" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="74" y1="58" x2="80" y2="58" stroke="white" stroke-width="1" stroke-opacity="0.4"/>
+</svg>

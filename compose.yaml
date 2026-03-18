@@ -1,0 +1,24 @@
+services:
+  api:
+    image: ${DESKTOP_PLUGIN_IMAGE}
+    command: /service -socket /run/guest-services/agent-memory.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  hindsight:
+    image: ghcr.io/vectorize-io/hindsight:latest
+    ports:
+      - "8888:8888"
+      - "9999:9999"
+    environment:
+      - HINDSIGHT_API_LLM_PROVIDER=${LLM_PROVIDER:-none}
+      - HINDSIGHT_API_LLM_MODEL=${LLM_MODEL:-}
+      - HINDSIGHT_API_LLM_API_KEY=${LLM_API_KEY:-}
+      - HINDSIGHT_API_LLM_BASE_URL=${LLM_BASE_URL:-}
+      - HINDSIGHT_API_LLM_MAX_CONCURRENT=${LLM_MAX_CONCURRENT:-1}
+      - HINDSIGHT_API_ENABLE_OBSERVATIONS=${ENABLE_OBSERVATIONS:-false}
+    volumes:
+      - hindsight-data:/home/hindsight/.pg0
+
+volumes:
+  hindsight-data:
