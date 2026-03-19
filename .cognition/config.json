@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "hindsight": {
+      "url": "http://localhost:8888/mcp/devin/",
+      "transport": "http"
+    }
+  }
+}
