@@ -1,13 +1,14 @@
 # Stage 1: Build React UI
-FROM node:20-alpine AS ui-builder
+FROM oven/bun:1-alpine AS ui-builder
+ARG BUN_CONFIG_REGISTRY
 WORKDIR /ui
-COPY ui/package.json ui/package-lock.json* ./
-RUN npm install
+COPY ui/package.json ui/bun.lockb* ./
+RUN bun install
 COPY ui/ .
-RUN npm run build
+RUN bun run build
 
 # Stage 2: Build Go backend
-FROM golang:1.22-alpine AS backend-builder
+FROM golang:1.24-alpine AS backend-builder
 ENV CGO_ENABLED=0
 WORKDIR /backend
 COPY backend/go.mod backend/go.sum* ./
@@ -16,7 +17,7 @@ COPY backend/ .
 RUN go build -trimpath -ldflags="-s -w" -o /service
 
 # Stage 3: Final extension image
-FROM alpine:3.19
+FROM alpine:3.21
 LABEL org.opencontainers.image.title="Agent Memory" \
       org.opencontainers.image.description="Shared offline memory for AI agents via Hindsight. MCP-first, Docker MCP Gateway compatible." \
       org.opencontainers.image.vendor="agent-memory" \
